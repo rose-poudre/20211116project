@@ -5,157 +5,169 @@
     <meta http-equiv="X-UAs-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/sample.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css" />
+     <link rel="stylesheet" href="css/foodinput.css" /> -->
+    <link rel="stylesheet" href="./css/modal.css" />
   </head>
   <body>
+    <section>
+      <table border="1">
+        <tr>
+          <th>日付</th>
+          <th>体重</th>
+        </tr>
+        <tr id="memo">
+          <td>
+            <input type="date" id="date1" />
+          </td>
+          <td>
+            <input type="number" id="today_weight1" />
+          </td>
+        </tr>
 
-      <section>
-        <table border="1">
-          <tr>
-            <th>日付</th>
-            <th>体重</th>
-            <th>摂取カロリー</th>
-            <!-- <th>1日カロリー</th> -->
-          </tr>
-          <tr id="memo">
-            <td>
-              <input type="date" id="date1" />
-            </td>
-            <td>
-              <input type="number" id="today_weight1" />
-            </td>
-            <td>
-              <input type="number" id="today_cal1" />
-            </td>
-          </tr>
+        <tr id="memo2">
+          <td>
+            <input type="date" id="date2" />
+          </td>
+          <td>
+            <input type="number" id="today_weight2" />
+          </td>
+        </tr>
+        <tr id="memo3">
+          <td>
+            <input type="date" id="date3" />
+          </td>
+          <td>
+            <input type="number" id="today_weight3" />
+          </td>
+        </tr>
+        <tr id="memo4">
+          <td>
+            <input type="date" id="date4" />
+          </td>
+          <td>
+            <input type="number" id="today_weight4" />
+          </td>
+        </tr>
+        <tr id="memo5">
+          <td>
+            <input type="date" id="date5" />
+          </td>
+          <td>
+            <input type="number" id="today_weight5" />
+          </td>
+        </tr>
+        <tr id="memo6">
+          <td>
+            <input type="date" id="date6" />
+          </td>
+          <td>
+            <input type="number" id="today_weight6" />
+          </td>
+        </tr>
+        <tr id="memo7">
+          <td>
+            <input type="date" id="date7" />
+          </td>
+          <td>
+            <input type="number" id="today_weight7" />
+          </td>
+        </tr>
+      </table>
+      <ul>
+        <li id="save">Save</li>
+        <li id="clear">Clear</li>
+      </ul>
+    </section>
 
-          <tr id="memo2">
-            <td>
-              <input type="date" id="date2" />
-            </td>
-            <td>
-              <input type="number" id="today_weight2" />
-            </td>
-            <td>
-              <input type="number" id="today_cal2" />
-            </td>
-
-          </tr>
-          <tr id="memo3">
-            <td>
-              <input type="date" id="date3" />
-            </td>
-            <td>
-              <input type="number" id="today_weight3" />
-            </td>
-            <td>
-              <input type="number" id="today_cal3" />
-            </td>
-            
-          </tr>
-          <tr id="memo4">
-            <td>
-              <input type="date" id="date4" />
-            </td>
-            <td>
-              <input type="number" id="today_weight4" />
-            </td>
-            <td>
-              <input type="number" id="today_cal4" />
-            </td>
-            
-          </tr>
-          <tr id="memo5">
-            <td>
-              <input type="date" id="date5" />
-            </td>
-            <td>
-              <input type="number" id="today_weight5" />
-            </td>
-            <td>
-              <input type="number" id="today_cal5" />
-            </td>
-            
-          </tr>
-          <tr id="memo6">
-            <td>
-              <input type="date" id="date6" />
-            </td>
-            <td>
-              <input type="number" id="today_weight6" />
-            </td>
-            <td>
-              <input type="number" id="today_cal6" />
-            </td>
-            
-          </tr>
-          <tr id="memo7">
-            <td>
-              <input type="date" id="date7" />
-            </td>
-            <td>
-              <input type="number" id="today_weight7" />
-            </td>
-            <td>
-              <input type="number" id="today_cal7" />
-            </td>
-            
-          </tr>
-        </table>
-        <ul>
-          <li id="save">Save</li>
-          <li id="clear">Clear</li>
-        </ul>
-      </section>
-    </main>
-
-
-
-
-
-
-    
     <!-- グラフ化 -->
-    <canvas id="myMixChart"> </canvas>
-    <!-- <canvas id="graph-area"></canvas> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"
-      type="text/javascript"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <canvas id="ex_chart"></canvas>
+
+    <!-- モーダルボタン -->
+    <button class="js-open button-open">体重入力</button>
+    <!-- モーダルボタン終了 -->
+
+    <!-- オーバーレイ -->
+    <div id="overlay" class="overlay"></div>
+    <!-- モーダルウィンドウ -->
+    <div class="modal-window">
+      <div class="number">
+       <p id="w"></p>
+        <p>kg</p>
+      </div>
+
+      <button onclick="append( '1' )">1</button>
+      <button onclick="append( '2' )">2</button>
+      <button onclick="append( '3' )">3</button><br />
+      <button onclick="append( '4' )">4</button>
+      <button onclick="append( '5' )">5</button>
+      <button onclick="append( '6' )">6</button><br />
+      <button onclick="append( '7' )">7</button>
+      <button onclick="append( '8' )">8</button>
+      <button onclick="append( '9' )">9</button><br />
+      <button onclick="append( '0' )">0</button>
+      <button onclick="append( '.' )">.</button>
+      <button onclick="document.querySelector( 'input' ).value ='' ">C</button
+      ><br />
+
+      <button id="ok">OK</button>
+
+      <!-- 閉じるボタン -->
+      <button class="js-close button-close">Close</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
-      // 最初に画面をスライドダウン
-      $("main").slideDown(500);
+      //inputタグを更新する関数
+      function update(number) {
+        document.querySelector("input").value = number;
+      }
 
-      
+      //数字ボタンが押されたので数字を後ろに追加する
+      function append(number) {
+        document.querySelector("input").value += number;
+      }
 
+      //[=]ボタンが押されたら計算
+      function calc() {
+        const v = document.querySelector("input").value;
+        const f = new Function("return" + v);
+        update(f().toString());
+      }
 
+      $(function () {
+        $(".modal-window").hide();
+        $(".js-open").click(function () {
+          $("#overlay, .modal-window").fadeIn();
+        });
+        $(".js-close").click(function () {
+          $("#overlay, .modal-window").fadeOut();
+        });
+      });
 
-
-
-
-
-
-
-
-      
       //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date1").val();
         const weight = $("#today_weight1").val();
-        const calorie = $("#today_cal1").val();
-        const change = $("#change").val();
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
-        // console.log(hole);
+
         const jsonData = JSON.stringify(hole);
         // console.log(jsonData);
         // ローカルストレージのmemoに保存
@@ -168,8 +180,6 @@
         // テキストエリア空白で上書き
         $("#date1").val("");
         $("#today_weight1").val("");
-        $("#today_cal1").val("");
-        $("#change").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo")) {
@@ -180,8 +190,6 @@
         // 取得した内容でテキストエリアを上書き
         $("#date1").val(hole.date);
         $("#today_weight1").val(hole.weight);
-        $("#today_cal1").val(hole.calorie);
-        $("#change").val(hole.change);
       }
 
       //////////////////////// 保存/////////////////////
@@ -189,13 +197,10 @@
         // テキストエリアの内容取得
         const date = $("#date2").val();
         const weight = $("#today_weight2").val();
-        const calorie = $("#today_cal2").val();
-        const change = $("#change2").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -210,8 +215,6 @@
         // テキストエリア空白で上書き
         $("#date2").val("");
         $("#today_weight2").val("");
-        $("#today_cal2").val("");
-        $("#change2").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo2")) {
@@ -222,21 +225,16 @@
         // 取得した内容でテキストエリアを上書き
         $("#date2").val(hole.date);
         $("#today_weight2").val(hole.weight);
-        $("#today_cal2").val(hole.calorie);
-        $("#change2").val(hole.change);
       }
       //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date3").val();
         const weight = $("#today_weight3").val();
-        const calorie = $("#today_cal3").val();
-        const change = $("#change3").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -251,8 +249,6 @@
         // テキストエリア空白で上書き
         $("#date3").val("");
         $("#today_weight3").val("");
-        $("#today_cal3").val("");
-        $("#change3").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo3")) {
@@ -263,21 +259,16 @@
         // 取得した内容でテキストエリアを上書き
         $("#date3").val(hole.date);
         $("#today_weight3").val(hole.weight);
-        $("#today_cal3").val(hole.calorie);
-        $("#change3").val(hole.change);
       }
       //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date4").val();
         const weight = $("#today_weight4").val();
-        const calorie = $("#today_cal4").val();
-        const change = $("#change4").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -292,8 +283,6 @@
         // テキストエリア空白で上書き
         $("#date4").val("");
         $("#today_weight4").val("");
-        $("#today_cal4").val("");
-        $("#change4").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo4")) {
@@ -304,21 +293,16 @@
         // 取得した内容でテキストエリアを上書き
         $("#date4").val(hole.date);
         $("#today_weight4").val(hole.weight);
-        $("#today_cal4").val(hole.calorie);
-        $("#change4").val(hole.change);
       }
-//////////////////////// 保存/////////////////////
+      //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date5").val();
         const weight = $("#today_weight5").val();
-        const calorie = $("#today_cal5").val();
-        const change = $("#change5").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -333,8 +317,6 @@
         // テキストエリア空白で上書き
         $("#date5").val("");
         $("#today_weight5").val("");
-        $("#today_cal5").val("");
-        $("#change5").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo5")) {
@@ -345,21 +327,16 @@
         // 取得した内容でテキストエリアを上書き
         $("#date5").val(hole.date);
         $("#today_weight5").val(hole.weight);
-        $("#today_cal5").val(hole.calorie);
-        $("#change5").val(hole.change);
       }
       //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date6").val();
         const weight = $("#today_weight6").val();
-        const calorie = $("#today_cal6").val();
-        const change = $("#change6").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -374,8 +351,6 @@
         // テキストエリア空白で上書き
         $("#date6").val("");
         $("#today_weight6").val("");
-        $("#today_cal6").val("");
-        $("#change6").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo6")) {
@@ -386,21 +361,16 @@
         // 取得した内容でテキストエリアを上書き
         $("#date6").val(hole.date);
         $("#today_weight6").val(hole.weight);
-        $("#today_cal6").val(hole.calorie);
-        $("#change6").val(hole.change);
       }
       //////////////////////// 保存/////////////////////
       $("#save").on("click", function () {
         // テキストエリアの内容取得
         const date = $("#date7").val();
         const weight = $("#today_weight7").val();
-        const calorie = $("#today_cal7").val();
-        const change = $("#change7").val();
+
         const hole = {
           date: date,
           weight: weight,
-          calorie: calorie,
-          change: change,
         };
         // console.log(hole);
         const jsonData = JSON.stringify(hole);
@@ -415,8 +385,6 @@
         // テキストエリア空白で上書き
         $("#date7").val("");
         $("#today_weight7").val("");
-        $("#today_cal7").val("");
-        $("#change7").val("");
       });
       // ローカルストレージにmemoの内容あるか確認
       if (localStorage.getItem("memo7")) {
@@ -427,121 +395,58 @@
         // 取得した内容でテキストエリアを上書き
         $("#date7").val(hole.date);
         $("#today_weight7").val(hole.weight);
-        $("#today_cal7").val(hole.calorie);
-        $("#change7").val(hole.change);
       }
 
+      ////////////////////////グラフ//////////////////////
+      var ctx = document.getElementById("ex_chart");
 
+      var data = {
+        labels: [
+          $("#date1").val(),
+          $("#date2").val(),
+          $("#date3").val(),
+          $("#date4").val(),
+          $("#date5").val(),
+        ],
+        datasets: [
+          {
+            label: "体重記録",
+            data: [
+              $("#today_weight1").val(),
+              $("#today_weight2").val(),
+              $("#today_weight3").val(),
+              $("#today_weight4").val(),
+              $("#today_weight5").val(),
+            ],
+            borderColor: "rgba(255, 100, 100, 1)",
+            lineTension: 0,
+            fill: false,
+            borderWidth: 3,
+          },
+        ],
+      };
 
+      var options = {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                min: 40,
+                max: 100,
+                stepSize: 10,
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      };
 
-
-      ////////////////////////メモ追加//////////////////////
-
-  var ctx = document.getElementById("myMixChart");
-  var myMixChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-//データ項目のラベル
-      labels: [
-        $('#date1').val(),
-        $('#date2').val(),
-        $('#date3').val(),
-        $('#date4').val(),
-        $('#date5').val(),
-        $('#date6').val(),
-        $('#date7').val(),],
-        datasets: [{
-            //棒グラフ
-            label: "1日のカロリー", //データ項目のラベル
-          data: [
-            $('#today_cal1').val(),
-            $('#today_cal2').val(),
-            $('#today_cal3').val(),
-            $('#today_cal4').val(),
-            $('#today_cal5').val(),
-            $('#today_cal6').val(),
-            $('#today_cal7').val(),
-          ], //グラフのデータ
-            backgroundColor: "rgba(200,112,126,0.5)",
-            yAxisID: 'left-y-axis' //左の縦軸に表示
-        }, {
-            //折れ線グラフ
-            label: "体重", //データ項目のラベル
-            type: 'line',
-          data: [
-            $('#today_weight1').val(),
-            $('#today_weight2').val(),
-            $('#today_weight3').val(),
-            $('#today_weight4').val(),
-            $('#today_weight5').val(),
-            $('#today_weight6').val(),
-            $('#today_weight7').val(),
-          ], //グラフのデータ
-            borderColor: "rgba(80,126,164,1)",
-            backgroundColor: "rgba(0,0,0,0)",
-            yAxisID: 'right-y-axis' //右の縦軸に表示
-        }]
-    },
-    options: {
-      title: {
-        display: true,
-        //グラフタイトル
-        text: '自己管理表'
-      },
-      scales: {
-            yAxes: [
-                {
-                 //左軸の設定
-                  id: 'left-y-axis',
-                  position: 'left',
-                  ticks: {
-                    suggestedMax: 5000, //最大値
-                    suggestedMin: 0,  //最小値
-                    stepSize: 500, //縦ラベルの数値単位
-                    callback: function(value, index, values){
-                      return  value +  'cal' //単位
-                    }
-                  }
-              }, {
-                 //右軸の設定
-                  id: 'right-y-axis',
-                  position: 'right',
-                  ticks: {
-                    suggestedMax: 150, //最大値
-                    suggestedMin: 0,  //最小値
-                    stepSize: 10, //縦ラベルの数値単位
-                    callback: function(value, index, values){
-                      return  value +  'kg' //単位
-                    }
-                  },
-              }]
-        }}
-  });
-    // window.onload = function(){
-    //   var ctx = document.getElementById("graph-area").getContext("2d");
-    //   window.myLine = new Chart(ctx).Line(myMixChart);
-    // }
-
-    $('td').on('change', 'input', function (){
-  myMixChart.data.length = 0;
-  let numbers = [
-    $('#today_weight1').val(),
-    $('#today_weight2').val(),
-    $('#today_weight3').val(),
-    $('#today_weight4').val(),
-    $('#today_weight5').val(),
-    $('#today_weight6').val(),
-    $('#today_weight7').val(),
-  ];   // 各点の値
-
-  myMixChart.data = numbers;
-  var ctx = document.getElementById("graph-area").getContext("2d");
-  window.myLine = new Chart(ctx).Line(myMixChart);
-});
-
-let ipt = document.querySelector('input');
-let elem = document.querySelector('p');
-elem.innerText = ipt.value;
+      var ex_chart = new Chart(ctx, {
+        type: "line",
+        data: data,
+        options: options,
+      });
+      //////////////////////////////////////////////
     </script>
   </body>
 </html>

@@ -23,7 +23,7 @@
     <div class="wrapper">
       <div class="top-wrapper">
         <div class="container text-center">
-          <p>昼食</p>
+          <p>間食</p>
         </div>
         <!--/.container-->
       </div>
@@ -40,6 +40,8 @@
       <label>グラム数</label>
       <input type="text" id="amount" placeholder="amount" /><br />
 
+
+
       <div class="button">
         <button type="button" class="btn add-btn" id="button">
           <img src="img/add-btn.png" alt="追加" />
@@ -49,6 +51,8 @@
           <img src="img/completion-btn.png" alt="完了" />
         </button></a>
       </div>
+
+
     </div>
     <!--/.wrapper-->
     <div class="footer fixed-bottom link-btn">
@@ -132,11 +136,11 @@
       //Firestoreを利用するための変数
       const db = getFirestore(app);
 
-      ///////////////////昼食////////////////////////////////
+      //////////////////////間食/////////////////////////////
       $("#button").on("click", function () {
         // 送信時に必要な処理
         const data = {
-          lunch: {
+          snack: {
             0: {
               name: $("#name").val(),
               kcal: $("#kcal").val(),

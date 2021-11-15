@@ -188,3 +188,16 @@ div#modal div:target {
   flex-direction: column;
   margin-top: 80px;
 }
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn,
+.next-btn {
+  width: 130px;
+}
+
+

@@ -40,21 +40,17 @@
       <label>グラム数</label>
       <input type="text" id="amount" placeholder="amount" /><br />
 
-      <button type="button" class="btn add-btn" id="button">
-        <img src="img/add-btn.png" alt="追加" />
-      </button>
+      <div class="button">
+        <button type="button" class="btn add-btn" id="button">
+          <img src="img/add-btn.png" alt="追加" />
+        </button>
 
-      <button type="button" class="btn add-btn" id="button">
-        <img src="img/completion-btn.png" alt="完了" />
-      </button>
+        <a href="./index.html"><button type="button" class="btn next-btn" id="button">
+          <img src="img/completion-btn.png" alt="完了" />
+        </button></a>
+      </div>
 
       <hr />
-
-      <!-- <div>
-        <a href="index.html"
-          ><button class="complere-btn" id="button">入力完了</button></a
-        >
-      </div> -->
     </div>
     <!--/.wrapper-->
     <div class="footer fixed-bottom link-btn">
@@ -155,6 +151,7 @@
         // console.log(data);
         addDoc(collection(db, "meal_history"), data);
       });
+
     </script>
   </body>
 </html>

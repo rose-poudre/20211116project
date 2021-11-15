@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-      <section>
-        <div>
-          <h2>現在の情報を入力してください</h2>
-          <p>身長(cm): <input type="number" id="height" /></p>
-          <p>体重(kg): <input type="number" id="weight" /></p>
-          <p>年齢(歳): <input type="number" id="age" /></p>
-          <p>
-            活動レベル:
-            <select name="" id="select"></select>
-          </p>
-          <p><input type="button" value="計算" id="calc" /></p>
-          <p>1日の摂取カロリー</p>
-          <p id="result"></p>
-          <p>目標体重</p>
-          <input type="number" id="goal_weight">
-          <p>目標期限</p>
-          <input type="text" id="goal_date"><br>
-
-          <button id="button">LET'S GO!!</button>
-        </div>
-      </section>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script>
-        ///////// 選択タブ（活動レベル）///////////
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <section>
+      <div>
+        <h2>現在の情報を入力してください</h2>
+        <p>身長(cm): <input type="number" id="height" /></p>
+        <p>体重(kg): <input type="number" id="weight" /></p>
+        <p>年齢(歳): <input type="number" id="age" /></p>
+        <p>
+          活動レベル:
+          <select name="" id="select"></select>
+        </p>
+        <p><input type="button" value="計算" id="calc" /></p>
+        <p>1日の摂取カロリー</p>
+        <p id="result"></p>
+        <p>目標体重: <input type="number" id="goal_weight" /></p>
+        <p>目標期限: <input type="text" id="goal_date" /></p>
+        <br />
+        <button id="button">complete</button><br />
+        <button id="button_next">LET'S GO!!</button>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      ///////// 選択タブ（活動レベル）///////////
       const mix = {
         text: [
           "ほぼ運動しない.通勤・デスクワーク程度",
@@ -82,13 +82,9 @@
           );
         }
       });
-      </script>
+    </script>
 
-
-
-
-
-      <script type="module">
+    <script type="module">
       "use strict";
       //firebaseを利用するためのコード
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
@@ -131,24 +127,19 @@
       $("#button").on("click", function () {
         // 送信時に必要な処理
         const data = {
-            goalday:$("#goal_date").val(),
-            targetweight:$("#goal_weight").val(),
-            totalcal:$('#result').html()
-          };
+          goalday: $("#goal_date").val(),
+          targetweight: $("#goal_weight").val(),
+          totalcal: $("#result").html(),
+        };
         alert("ok");
         // console.log(data);
         addDoc(collection(db, "personal"), data);
       });
+
+      /////////////////////ページ遷移////////////////////////
+      $("#button_next").on("click", function () {
+        location.href = "./index.html";
+      });
     </script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-    
