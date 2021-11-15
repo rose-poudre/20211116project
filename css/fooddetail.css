@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* ContentsArea
+-------------------------- */
+.wrapper {
+  background-color: rgb(0, 0, 0, 0.7);
+}
+
+.top-wrapper {
+  background-color: rgb(0, 0, 0, 0);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.close-btn {
+  display: block;
+  justify-content: flex-end;
+  text-align: right;
+  padding-top: 8 px;
+}
+
+.batsu-btn {
+  background-color: #fff;
+  border-radius: 20%;
+  color: #222;
+  width: 32px;
+  height: 24px;
+  text-decoration: none;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.main-wrapper {
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 375px;
+  height: 667px;
+}
+
+.container {
+  margin-left: 0;
+}
+
+.food-detail-img {
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.food-name {
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 600px !important;
+  font-size: 24px;
+  text-align: center;
+}
+
+.food-list-detail {
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #fff;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.food-list-detail ul {
+  list-style-type: none;
+  padding-left: 0;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>食事入力ページ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="css/foodinput.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top-wrapper">
+        <div class="container text-center">
+          <p>朝食</p>
+        </div>
+        <!--/.container-->
+      </div>
+      <!--/.top-wrapper-->
+    </div>
+
+    <div class="main-wrapper">
+      <label>日付</label>
+      <input type="text" id="date" placeholder="date" /><br />
+      <label>食品名</label>
+      <input type="text" id="name" placeholder="name" /><br />
+      <label>カロリー数</label>
+      <input type="text" id="kcal" placeholder="kcal" /><br />
+      <label>グラム数</label>
+      <input type="text" id="amount" placeholder="amount" /><br />
+
+      <button type="button" class="btn add-btn" id="button">
+        <img src="img/add-btn.png" alt="追加" />
+      </button>
+
+      <button type="button" class="btn add-btn" id="button">
+        <img src="img/completion-btn.png" alt="完了" />
+      </button>
+
+      <hr />
+
+      <!-- <div>
+        <a href="index.html"
+          ><button class="complere-btn" id="button">入力完了</button></a
+        >
+      </div> -->
+    </div>
+    <!--/.wrapper-->
+    <div class="footer fixed-bottom link-btn">
+      <a href="#"
+        ><button type="button" class="btn btn-secondary color-navy">
+          <img src="img/home-icon.png" alt="" /></button
+      ></a>
+      <a href="#"
+        ><button type="button" class="btn btn-secondary color-navy">
+          <img src="img/graph-icon.png" alt="" /></button
+      ></a>
+      <a href="#"
+        ><button type="button" class="btn btn-secondary color-navy">
+          <img src="img/calender-icon.png" alt="" /></button
+      ></a>
+      <a href="#"
+        ><button type="button" class="btn btn-secondary color-navy">
+          <img src="img/mypage-icon.png" alt="" /></button
+      ></a>
+    </div>
+    <!--/.footer-->
+
+    <!-- modal -->
+    <div id="modal">
+      <div id="open01">
+        <a class="close_overlay"></a>
+        <div id="modal_window">
+          <a href="#" id="close">【×】</a>
+          <img src="" alt="" />
+        </div>
+        <!--/.modal_window-->
+      </div>
+      <!--/#open01-->
+    </div>
+    <!--/.modal-->
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="module">
+      "use strict";
+      //firebaseを利用するためのコード
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+
+      //firestoreを使うためのコード
+      import {
+        //import内は使用する関数を定義
+        getFirestore,
+        collection,
+        doc,
+        addDoc,
+        getDoc,
+        setDoc,
+        updateDoc,
+        deleteDoc,
+        deleteField,
+        serverTimestamp,
+        query,
+        orderBy,
+        onSnapshot,
+        Timestamp,
+      } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js"; //importに定義したのをfirestoreで使用
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCjJjAbvkARxiEdRgxXopqIOmkWOxaFOXs",
+        authDomain: "work-js.firebaseapp.com",
+        projectId: "work-js",
+        storageBucket: "work-js.appspot.com",
+        messagingSenderId: "649608969811",
+        appId: "1:649608969811:web:29e1bb2d8ca0c646d810a6",
+      };
+
+      //Firebaseを利用するための変数
+      const app = initializeApp(firebaseConfig);
+
+      //Firestoreを利用するための変数
+      const db = getFirestore(app);
+
+      ////////////////朝食////////////////////////////////
+      $("#button").on("click", function () {
+        // 送信時に必要な処理
+        const data = {
+          breakfast: {
+            0: {
+              name: $("#name").val(),
+              kcal: $("#kcal").val(),
+              amount: $("#amount").val(),
+            },
+          },
+          dateTime: $("#date").val(),
+        };
+        alert("ok");
+        // console.log(data);
+        addDoc(collection(db, "meal_history"), data);
+      });
+    </script>
+  </body>
+</html>
