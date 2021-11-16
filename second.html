@@ -4,28 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>情報入力</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/second.css" />
     <style></style>
   </head>
   <body>
     <section>
       <div>
         <h2>現在の情報を入力してください</h2>
-        <p>身長(cm): <input type="number" id="height" /></p>
-        <p>体重(kg): <input type="number" id="weight" /></p>
-        <p>年齢(歳): <input type="number" id="age" /></p>
-        <p>
-          活動レベル:
-          <select name="" id="select"></select>
+        <p class="caption">
+          身長(cm): <input type="number" id="height" class="input-frame" />
         </p>
-        <p><input type="button" value="計算" id="calc" /></p>
-        <p>1日の摂取カロリー</p>
+        <p class="caption">
+          体重(kg): <input type="number" id="weight" class="input-frame" />
+        </p>
+        <p class="caption">
+          年齢(歳): <input type="number" id="age" class="input-frame" />
+        </p>
+        <p class="select-box select-box-title">
+          活動レベル:
+          <select name="" id="select" class="select-box-list"></select>
+        </p>
+        <p><input type="button" value="計算" id="calc" class="next-btn" /></p>
+        <p class="kcal-title">1日の摂取カロリー</p>
         <p id="result"></p>
-        <p>目標体重: <input type="number" id="goal_weight" /></p>
-        <p>目標期限: <input type="text" id="goal_date" /></p>
+        <p class="caption">
+          目標体重: <input type="number" id="goal_weight" class="input-frame" />
+        </p>
+        <p class="caption">
+          目標期限: <input type="text" id="goal_date" class="input-frame" />
+        </p>
         <br />
-        <button id="button">complete</button><br />
-        <button id="button_next">LET'S GO!!</button>
+        <button id="button" class="next-btn">complete</button><br />
+        <button id="button_next" class="next-btn">LET'S GO!!</button>
       </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,7 +90,7 @@
         } else {
           $("#result").html(
             ((66 + 13.7 * w + 5 * h - 6.8 * a) * mix.number[4]).toFixed() +
-              "cal"
+              "kcal"
           );
         }
       });
